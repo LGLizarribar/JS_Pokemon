@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Pokedex</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://necolas.github.io/normalize.css/latest/normalize.css"
@@ -14,11 +17,41 @@
 
   <body>
     <header class="header">
-      Header
+      <img class="header__pokemon-logo" src="./assets/logo.png" alt="POKEMON">
     </header>
 
     <main class="main">
-      Main
+      <div class="main__container">
+        <span class="main__subcontainer">
+          <div class="main__icon" id="main-icon">
+            <img class="pokeball-icon" src="./assets/pokeball.png" alt="pokeball" id="btn_show_list">
+            <h3>Show every Pokemon!</h3>
+          </div>
+        </span>
+        <span class="main__subcontainer">
+          <div class="main__icon" id="main-icon">
+            <img class="pokeball-icon" src="./assets/pokeball.png" alt="pokeball" id="btn_show_random">
+            <h3>Check a random Pokemon!</h3>
+          </div>
+        </span>
+      </div>
+      <div class="main__searcher">
+        <form action="">
+          <label for="pokeName">Search for your favourite Pokemon!</label>
+          <input type="text" name="pokeName" id="pokeName">
+          <label for="btn"></label>
+          <input type="button" name="btn_search_pokemon" id="btn_search_pokemon" value="Show me!">
+      </form>
+      </div>
+      <div class="main__content hidden" id="main-content">
+        <ul id="list" class="main__content-list"></ul>
+      </div>
+      <div class="main__content hidden" id="main-random">
+        <ul id="list-random" class="main__content-list"></ul>
+      </div>
+      <div class="main__content hidden" id="main-search">
+        <ul id="list-search" class="main__content-list"></ul>
+      </div>
     </main>
   </body>
 </html>

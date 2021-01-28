@@ -12,15 +12,63 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background-color: blanchedalmond;
+  background-color: lightblue;
   text-align: center;
 }
 
 .header {
-  height: 80px;
-  background-color: cornflowerblue;
+  //height: 40%;
+  background-color: lightblue;
+
+  &__pokemon-logo {
+    width: 80%;
+  }
+
 }
 
 .main {
   height: calc(100% - 80px);
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 5%;
+  }
+
+  &__content-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+  }
+
+  &__element {
+      width: 50%;
+      padding: 5px;
+      maring: 5px;
+      border: rgba(88, 88, 192, 0.747) solid;
+      background-color: rgb(115, 115, 199);
+
+      &::marker{
+        font-size: 0;
+      }
+  }
+
+}
+
+
+.pokeball-icon {
+  width: 20%;
+}
+
+.hidden {
+  display: none;
 }
