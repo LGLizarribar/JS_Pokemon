@@ -2,25 +2,27 @@ import { fetchPokemon } from '../apis/api-search'
 
 const searchRandom = async () => {
 
-    const ulNode = document.getElementById('main-random');
-    const pokeNumber = Math.round(Math.random() * (150 - 1) + 1);
-    console.log(pokeNumber);
-    
-    //const erased = document.getElementById('main-element');
-    //if (erased) {ulNode.removeChild;}
+    const ulNode = document.getElementById('search-list');
+    const pokeNumber = Math.round(Math.random() * (900 - 1) + 1);
+    //console.log(pokeNumber);
+    const content = ulNode.innerHTML;
 
-    ulNode.classList.toggle("hidden");
+
+    if (content.length > 0) {
+        ulNode.innerHTML = "";
+
+    }
+
 
     const foundPokemon = await fetchPokemon(pokeNumber);
-    console.log(foundPokemon);
+    //console.log(foundPokemon);
 
 
-    if (ulNode) {
-    const liAttribute = await document.createElement('li');
-    const h4Pokemon = await document.createElement('h4');
-    h4Pokemon.innerText = await foundPokemon.name;
-    const pAttribute = await document.createElement('p');
-    pAttribute.innerText = await foundPokemon.id;
+    const liAttribute = document.createElement('li');
+    const h4Pokemon = document.createElement('h4');
+    h4Pokemon.innerText = foundPokemon.name;
+    const pAttribute = document.createElement('p');
+    pAttribute.innerText = foundPokemon.id;
     const imgPokemon = document.createElement('img');
     imgPokemon.src = foundPokemon.image;
 
@@ -31,8 +33,6 @@ const searchRandom = async () => {
     ulNode.appendChild(liAttribute);
     ulNode.setAttribute("class", "main__content");
     liAttribute.setAttribute("class", "main__element");
-    liAttribute.setAttribute("id", "main-element");
-    }
 
 }
 

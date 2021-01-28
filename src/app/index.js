@@ -4,6 +4,7 @@ import  { renderList } from './views/view-list';
 import { searchPokemon } from './views/view-search';
 import { searchRandom } from './views/view-random';
 
+
 function addListeners() {
   // TODO
   document.getElementById("btn_show_list").addEventListener("click", renderList);
